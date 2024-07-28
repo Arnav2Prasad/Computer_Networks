@@ -1,0 +1,67 @@
+192.168.0.40
+192.168.0.130
+Find network ID and broadcast of subnets and address range. 
+
+Sol : subnet mask is 255.255.255.128
+
+1111 1111 . 1111 1111 . 1111 1111 . 1000 0000
+NOT
+0000 0000 . 0000 0000 . 0000 0000 . 0111 1111
+192.168.0.0010 1000
+OR is ----------------
+192.168.0.1111 1111 ie 192.168.0.127 is broadcast address
+and 
+
+
+Network ID = subnet AND given address = 192.168.0.0
+
+--------------------------------------------------------------------------
+Sol of 2nd part : 
+
+0000 0000 . 0000 0000 . 0000 0000 . 0111 1111
+192.168.0. 1000 0010 
+OR -------------------------
+192.168.0.255 = BroadCast
+
+Netwrok ID = 192.168.0.128
+
+
+-----------------------------------------------------------------------------
+the order is: NetwrokID ..Useable Host Address... BroadCast
+
+/31 and /32 is NOT correct , as no addresses are left for host address
+
+/24 to /30: 
+
+for /20
+255.255.255.252
+
+--------------------------------------------------------------
+Question : write down the program to find out the network ID and broadcast address
+for the given network id and subnet mask
+
+612203011_ap_lab_1.txt
+
+Flow : 
+	Enter the subnet mask :   <enter> (eg /24)
+	output on the screen : 255.255.255.0
+
+	Enter class C ip address : <enter> (eg 192.168.0.10)
+	It should display network ID ie 192.168.0.0
+	display broadcast address ie 
+	and print start and end address of usable host
+
+	print number of subnet and print per subnet how many hosts;
+	then write for subnet1 this is the class C address
+	this IP does NOT belong to subnet1, enter the correct IP; if its valid then it should 
+		show network, broadcast and starting address
+
+		Use : C, C++, Python, Java,etc..
+
+
+-----------------------------------------------------------------------
+To find the network ID and broadcast address from a given IP address and subnet mask, follow these steps:
+
+    Convert the IP address and subnet mask to their binary representations.
+    Perform a bitwise AND operation between the binary IP address and the binary subnet mask to get the network ID.
+    Perform a bitwise OR operation between the network ID and the bitwise NOT of the subnet mask to get the broadcast address.
